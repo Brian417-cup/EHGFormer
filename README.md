@@ -1,4 +1,29 @@
 # HGFormer
-An efficient hypergraph-injected Transformer for 3D Human Pose Estimation 
+This is the official repository of "An efficient hypergraph-injected Transformer for 3D Human Pose Estimation". 
 
 Code will be released upon acceptance.
+
+
+
+## Visualization result
+
+### 3D Pose estimation
+
+![pose3d_1](fig/pose3d/basketball.gif)
+
+![pose3d_2](fig/pose3d/skating.gif)
+
+
+
+### Motion capture
+
+![mocap_1](fig/mocap/mocap_fig3.gif)
+
+
+
+![mocap_2](fig/mocap/mocap_fig2.gif)
+
+
+
+![mocap_3](fig/mocap/mocap_fig1.gif)
+
