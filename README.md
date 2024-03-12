@@ -1,5 +1,5 @@
 # HGFormer
-This is the official repository of "An efficient hypergraph-injected Transformer for 3D Human Pose Estimation". 
+This is the official repository of "An efficient hypergraph-injected transformer for 3D human pose estimation". 
 
 Code will be released upon acceptance.
 
