@@ -9,21 +9,17 @@ Code will be released upon acceptance.
 
 ### 3D Pose estimation
 
-![pose3d_1](fig/pose3d/basketball.gif)
-
-![pose3d_2](fig/pose3d/skating.gif)
 
 
-
-### Motion capture
-
-![mocap_1](fig/mocap/mocap_fig3.gif)
+| ![pose3d_1](fig/pose3d/basketball.gif) | ![pose3d_2](fig/pose3d/skating.gif) |
+| -------------------------------------- | ----------------------------------- |
 
 
 
-![mocap_2](fig/mocap/mocap_fig2.gif)
+### Simple Application: Motion capture
 
 
 
-![mocap_3](fig/mocap/mocap_fig1.gif)
+| ![mocap_1](fig/mocap/mocap_fig3.gif) | ![mocap_2](fig/mocap/mocap_fig2.gif) | ![mocap_3](fig/mocap/mocap_fig1.gif) |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
 
