@@ -7,7 +7,7 @@ Code will be released upon acceptance.
 
 ## Visualization result
 
-### 3D Pose estimation
+### 3D pose estimation
 
 
 
@@ -16,7 +16,7 @@ Code will be released upon acceptance.
 
 
 
-### Simple Application: Motion capture
+### Simple application: Motion capture for skeletal animation
 
 
 
