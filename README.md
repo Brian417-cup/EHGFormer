@@ -6,8 +6,8 @@
 
 This is the official implementation of the approach described in the paper:
 
-> [**EHGFormer: An efficient hypergraph-injected transformer for 3D human pose estimation**](https://www.sciencedirect.com/science/article/pii/S0262885625000137),
-> Siyuan Zheng, Weiqun Cao
+> [**EHGFormer: An efficient hypergraph-injected transformer for 3D human pose estimation**](https://www.sciencedirect.com/science/article/pii/S0262885625000137),  
+> Siyuan Zheng, Weiqun Cao  
 > *Image and Vision Computing, 2025*
 
 ## Network Architecture
