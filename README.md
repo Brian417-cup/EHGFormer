@@ -1,10 +1,14 @@
-# EHGFormer
-This is the official repository of "EHGFormer: An efficient hypergraph-injected transformer for 3D human pose estimation". 
-
+# EHGFormer: An efficient hypergraph-injected transformer for 3D human pose estimation
 | ![pose_1](inference/fig/fig1.gif) | ![pose_2](inference/fig/mesh_fig2.gif) | ![pose_1](inference/fig/mocap_fig3.gif) |
 | --------------------------------- | -------------------------------------- | --------------------------------------- |
 
 
+
+This is the official implementation of the approach described in the paper:
+
+> [**EHGFormer: An efficient hypergraph-injected transformer for 3D human pose estimation**](https://www.sciencedirect.com/science/article/pii/S0262885625000137),
+> Siyuan Zheng, Weiqun Cao
+> *Image and Vision Computing, 2025*
 
 ## Network Architecture
 
