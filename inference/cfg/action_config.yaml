@@ -1,0 +1,50 @@
+# The root path of this config file is in ../
+
+# video source file
+video_path: video/clapping_hand.mp4
+
+# 2D Pose Estimator Setting
+detector_2d:
+  # If 2d results we don't have, this value is null, else we will from *.npz file
+  input_npz: '' #'outputvideo.npz'
+  #  2dd kyepoints detector name
+  selected_name: vit_pose
+
+  #  vit_pose config
+  vit_pose:
+    name: vit_pose
+    detector_model: vitpose/checkpoints/yolov8/yolov8s.onnx #vitpose/checkpoints/yolov8/yolov8s.pt
+    detector_config: vitpose/config/default_config.yaml
+    pose_config: vitpose/config/default_config.yaml
+    pose_model: vitpose/checkpoints/vitpose-b-coco.onnx
+    output_dir: outputvideo
+
+  estimation_result:
+    save_npz: True
+
+# is save image for intermidate results?
+save_img: False
+
+#3D pose model setting
+action:
+  #  if use [vid_w,vid_h] to normalize, then it will True, else it will use [max_x,max_y] to normalize
+  use_pixel_normalize: False
+  #  whether use [vid_w,vid_h] to restore initial pixel coordinate
+  # If yes, the corresponding range is [0,vid_w] and [0,vid_h] respectively.
+  # else, it will be in [-1,1] data range
+  use_pixel_restore: False
+  # If use .bin file, it need config *.yaml file, else we don't use currently
+  model_config_path: cfg/pose3d/normal_model.yaml
+  # For checkpoint file, we only support .bin or .onnx currently
+  checkpoint_path: checkpoint/action/action_manual1.onnx #checkpoint/dynamic/pose3d_manual1.onnx #../checkpoint/pose3d/h36m/best_epoch.bin
+  # input frame
+  clip_len: 243
+  # If no conf the input channel number is 2 else 3
+  no_conf: False
+  # total action label map
+  label_map:  cfg/action/label_map_ntu60.txt  # cfg/action/label_map_ntu120.txt
+
+
+
+#3D Pose Estimator Output Setting
+write_camera_3d_point: False

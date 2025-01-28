@@ -1,0 +1,1 @@
+Put relative mesh dataset and SMPL config files model here.

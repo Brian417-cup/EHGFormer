@@ -1,0 +1,143 @@
+# The root path of this config file is in ../
+
+# video source file
+video_path: video/dance.mp4
+
+# 2D Pose Estimator Setting
+detector_2d:
+  # If 2d results we don't have, this value is null, else we will from *.npz file
+  input_npz: '' #'output_2dhpe_npz/kunkun_cut_2dhpe_with_mesh.npz' #''
+  #  2dd kyepoints detector name
+  selected_name: vit_pose
+
+  #  vit_pose config
+  vit_pose:
+    name: vit_pose
+    detector_config: vitpose/config/default_config.yaml
+    detector_model: vitpose/checkpoints/yolov8/yolov8s.onnx #vitpose/checkpoints/yolov8s.pt
+    pose_config: vitpose/config/default_config.yaml
+    pose_model: vitpose/checkpoints/vitpose-b-coco.onnx
+    output_dir: outputvideo
+
+  estimation_result:
+    save_npz: True
+
+# is save image for intermidate results?
+save_img: False
+
+# mesh
+mesh:
+  # we refine results from image-based mesh recovery method (here we use HybrIK as demo)
+  name: HybrIK
+  checkpoint_path: vitpose/checkpoints/hybrik/hybrik.onnx
+  refine_checkpoint_path: checkpoint/mesh/mesh_manual1_ft.onnx
+  # camera intrisic parameter for projection coordinate transfer (only support perspective currently)
+  camera:
+    # model space -> camera space
+    # This extrinsic parameters acquired from VideoPose3D
+    extrinsics:
+      # Rotation in quaternions format
+      R: [ 0.14070565, -0.15007018, -0.7552408, 0.62232804 ]
+      # translation in matrix
+      T: [ 1841.1070556640625, 4955.28466796875, 1563.4454345703125 ]
+    # camera space -> projection space
+    intrinsics:
+      #     In following type, the correct matrix can be written as:
+      #      fx = focal_length[:, 0]
+      #      fy = focal_length[:, 1]
+      #      px = principal_point[:, 0]
+      #      py = principal_point[:, 1]
+
+      #      K = [
+      #      [fx,   0,   px,   0],
+      #      [0,   fy,   py,   0],
+      #      [0,    0,    0,   1],
+      #      [0,    0,    1,   0],
+      #     ]
+      #      here, px= width/2, py= height/2 if in center
+      #      else in (0,0) if in upcorner (currently use)
+      support_type: [ perspective ]
+      type: perspective
+      focal_length: 1000.0
+      support_principal_type: [ upcorner,center ]
+      principal: upcorner
+
+  # If True, it will use refine module, else the visualization results will be directly acquired from HybrIK
+  use_refine: True
+  # If True, the start frame is (0,0,0) and others will in delta with start frame
+  # else, the (x,y,z) for all frame is in real camera space
+  relat_root: False
+  # input frame
+  clip_len: 16
+
+  # for camera transformation estiamtion if needed
+  motion_3d:
+    # If False, the motion3d for correct is not used.
+    # Else, we use estimated camera parameter offered by HybrIK with the help of Pytorch3D.
+    use_estimated_camera: False #True
+    #  if use [vid_w,vid_h] to normalize, then it will True, else it will use [max_x,max_y] to normalize
+    use_pixel_normalize: True
+    checkpoint_path: checkpoint/dynamic_distill/pose3d_manual1.onnx
+    # If no conf the input channel number is 2 else 3
+    no_conf: False
+    # Flip for data augumentation
+    flip_augument: True
+    # For root joint's postiion in all sequence.
+    # If true,the root joint is all around 0
+    # Else the z axith is only 0 at 1st frame
+    rootrel: False
+    gt_2d: False
+    clip_len: 243
+    #  whether use [vid_w,vid_h] to restore initial pixel coordinate
+    # If yes, the corresponding range is [0,vid_w] and [0,vid_h] respectively.
+    use_pixel_restore: True
+
+  render_result:
+    # If True, then will save render frames and can be saved as video or gif later
+    save_render_frame: True #True
+    # 3 options for smpl: smpl_female.onnx smpl_male.onnx .onnx smpl_neutral.onnx
+    smpl_parameter_path: checkpoint/mesh/smpl_neutral.onnx
+    # For visualize mesh result in *.mp4 file if True
+    export_mp4: True
+    # For visualize mesh result in *.gif file if True
+    export_gif: True
+
+  # If no conf the input channel number is 2 else 3
+  no_conf: False
+  # Flip for data augumentation
+  flip_augument: True
+  #  if use [vid_w,vid_h] to normalize, then it will True, else it will use [max_x,max_y] to normalize
+  use_pixel_normalize: True
+
+mocap:
+  # Root directory of Blender home
+  blender_home: "D:/Installment_Of_Blender"
+  empty_blender_file: cfg/empty.blend
+  # If export *.fbx mocap file, set True, else False
+  fbx_export: True
+  # If export *.bvh mocap file, set True, else False
+  bvh_export: True
+
+  # bpy use
+  bpy:
+    use_relative_path: True
+    target_script_path: tool/convert2fbx.py
+    # target inference script and target conversion script relation ship, here,
+    # default "infer_mesh.py" is in the parent directory of "tool/convert2fbx.py"
+    root_path: '..'
+    male_model_path: checkpoint/other/SMPL_m_unityDoubleBlends_lbs_10_scale5_207_v1.0.0.fbx
+    female_model_path: checkpoint/other/SMPL_f_unityDoubleBlends_lbs_10_scale5_207_v1.0.0.fbx
+    character_model_path: None
+    input_path: '*.npz'
+    output_path: '*.fbx or *.bvh'
+    fps_source: 24
+    fps_target: 24
+    gender: male
+    subject_id: -1
+    rotate_y: True
+
+  # export for custom node as root name,then bvh export will export this as root joint
+  root_joint_name: pelvis
+
+#3D Pose Estimator Output Setting
+write_camera_3d_point: False

@@ -1,0 +1,1 @@
+Put converted Stacked Hourglass detections H36.M data here after converted from convert_h36m.py.

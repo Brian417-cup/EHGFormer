@@ -87,4 +87,4 @@ Our code is extended from the following repositories. We thank the authors for r
 - [pytorch3d](https://github.com/facebookresearch/pytorch3d/tree/38cf0dc1c52138987e6e66295c5a2d192a6914bd)
 - [bvhio](https://github.com/Wasserwecken/bvhio)
 
-- [Simplified_Animated_Drawings]([Brian417-cup/AnimatedDrawings: Code to accompany "A Method for Animating Children's Drawings of the Human Figure"](https://github.com/Brian417-cup/AnimatedDrawings))
+- [Simplified_Animated_Drawings](https://github.com/Brian417-cup/AnimatedDrawings)

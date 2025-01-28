@@ -1,0 +1,9 @@
+*.obj
+*.egg-info/
+build/
+.vscode/
+dist/
+*.pyc
+vendor/
+vendor/
+*.json

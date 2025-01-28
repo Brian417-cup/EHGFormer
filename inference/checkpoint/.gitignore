@@ -1,0 +1,9 @@
+*.onnx
+*.bin
+*.bin
+!action
+!mesh
+!other
+!dynamic
+!dynamic_distill
+!static

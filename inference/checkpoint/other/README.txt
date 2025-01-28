@@ -1,0 +1,1 @@
+*.fbx comes from official SMPL website, please follow their corresponding license.

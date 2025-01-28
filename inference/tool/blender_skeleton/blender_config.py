@@ -1,0 +1,1 @@
+BLENDER_HOME = r'YOUR_PATH_TO_BLENDER'  # for blender 2.9.1

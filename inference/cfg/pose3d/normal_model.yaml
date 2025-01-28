@@ -1,0 +1,19 @@
+# Model
+maxlen: 243
+depth: 8
+dim_feat: 512
+mlp_ratio: 2
+dim_rep: 512
+num_heads: 8
+version: 2
+
+
+# Data
+clip_len: 243
+rootrel: True
+num_joints: 17
+no_conf: False
+gt_2d: False
+
+
+
