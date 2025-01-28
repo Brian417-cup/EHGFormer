@@ -68,6 +68,26 @@ Detailed instructions see in [Simplified Animated Drawings](https://github.com/B
 
 
 
+## Citation
+
+If you find our work useful in your research, please consider citing:
+
+```BibTex
+@article{ZHENG2025105425,
+title = {EHGFormer: An efficient hypergraph-injected transformer for 3D human pose estimation},
+journal = {Image and Vision Computing},
+pages = {105425},
+year = {2025},
+issn = {0262-8856},
+doi = {https://doi.org/10.1016/j.imavis.2025.105425},
+url = {https://www.sciencedirect.com/science/article/pii/S0262885625000137},
+author = {Siyuan Zheng and Weiqun Cao},
+keywords = {Estimation of human pose in 3D, Transformers, Hypergraph, Efficient inference}
+}
+```
+
+
+
 ## Acknowledgement
 
 Our code is extended from the following repositories. We thank the authors for releasing the codes.
