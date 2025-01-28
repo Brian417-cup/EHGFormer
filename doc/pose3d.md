@@ -64,11 +64,13 @@
 
 # MPJPE Results:
 
-|                      | manual1 | manual2 |
+It have some differences in paper.
+
+|                      | partition1 | partition2 |
 | -------------------- | --------------------- | --------------------- |
 | static               | 38.8                  | 38.8                  |
 | dynamic              | 38.3                  | 38.2                  |
-| dynamic+distillation |   39.9                    |                       |
+| dynamic+distillation |   39.9                    | 39.8 |
 
 # Useful Tips
 
