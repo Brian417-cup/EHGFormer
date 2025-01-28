@@ -1,0 +1,5 @@
+spatial_mode: hyper_dependent_common
+hyper_head: 1
+hyper_multi_merge_mode: none
+joint_label: [[0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2]]
+dataset: h36m

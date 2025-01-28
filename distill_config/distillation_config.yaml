@@ -1,0 +1,20 @@
+# this path shouln't be None when runing
+teacher_ckpt: 'teacher/best_epoch.bin'
+# if distiller needed, it should give detailed path
+distiller_ckpt: null #'/root/autodl-tmp/classic_thesis/MixSTE/checkpoint/best_epoch_distiller_old.bin'
+# if student needed to resume, it should give detailed path
+student_ckpt: null #'/root/autodl-tmp/classic_thesis/MixSTE/checkpoint/best_epoch_old.bin'
+middle_ids_t: [ 0,1,2,3,7 ]
+middle_ids_s: [ 0,1,2,3,5 ]
+common_kd_alpha: 0.0
+middle_kd_alpha: 0.000001
+t_dep: 8
+s_dep: 6
+t_cs: 512
+s_cs: 128
+t_f: 243
+s_f: 243
+spatial_mean: False
+adjustive_middle: False
+generation: True
+generation_tds: 2

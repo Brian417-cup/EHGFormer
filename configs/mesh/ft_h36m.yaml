@@ -1,0 +1,64 @@
+# General  
+finetune: True
+partial_train: null
+train_pw3d: False
+warmup_h36m: 100
+log: run_mesh
+backbone_ckpt: null
+
+# Traning
+epochs: 100
+checkpoint_frequency: 20
+batch_size: 96
+batch_size_img: 512
+dropout: 0.1
+dropout_loc: 1
+lr_backbone: 0.00008
+lr_head: 0.0008
+weight_decay: 0.01
+lr_decay: 0.98
+quickdebug: False
+
+# Model
+# For following options, they are not used for init MotionBERT,for our model, we load relative parameter from cmd
+###########################################
+dim_feat: 128
+mlp_ratio: 2
+num_heads: 8
+att_fuse: True
+###########################################
+# For following options, they are used for current model structure of last classification head
+# And for backbone about Spatial and Temporal Transformer blocks, all paramters comes from arguments and hyper-config.
+
+# this paramter demonstrate channel dimension number in embedding space
+maxlen: 243
+depth: 6
+dim_rep: 128
+dropout_ratio: 0.5
+hidden_dim: 1024
+num_joints: 17
+###########################################
+
+# Data
+data_root: data/mesh
+dt_file_h36m: mesh_det_h36m_w_hybrik_pred.pkl
+clip_len: 16
+data_stride: 8
+sample_stride: 2
+dataset: h36m
+
+# Loss
+lambda_3d: 0.5
+lambda_scale: 0
+lambda_3dv: 10
+lambda_lv: 0
+lambda_lg: 0
+lambda_a: 0
+lambda_av: 0
+lambda_pose: 1000
+lambda_shape: 1
+lambda_norm: 20
+loss_type: 'L1'
+
+# Augmentation
+flip: True

@@ -1,0 +1,57 @@
+# General  
+train_2d: False
+no_eval: False
+finetune: False
+partial_train: null
+dataset: h36m
+log: run_pose3d
+
+
+# Traning 
+epochs: 200
+checkpoint_frequency: 10 #30
+batch_size: 4 # 32
+dropout: 0.0
+learning_rate: 0.0003 #0.0002
+weight_decay: 0.01
+lr_decay: 0.99
+quickdebug: False
+
+# Model (Duration distillation, these parameter is ineffective)
+#########################################################################
+maxlen: 243
+depth: 6
+dim_feat: 128
+mlp_ratio: 2
+dim_rep: 128
+num_heads: 8
+##########################################################################
+
+# Data
+data_root: data/motion3d/
+subset_list: [ H36M-SH/Mixste_Style_v2 ]
+dt_file: h36m_sh_conf_cam_source_final.pkl
+clip_len: 243
+data_stride: 81 #81
+rootrel: True
+sample_stride: 2 #1
+num_joints: 17
+no_conf: False
+gt_2d: False
+
+# Loss (This part has been modified like MixSTE)
+lambda_3d_velocity: 2.0 #20.0
+lambda_scale: 0 #0.5
+lambda_tcl: 0.5
+lambda_lv: 0.0
+lambda_lg: 0.0
+lambda_a: 0.0
+lambda_av: 0.0
+
+# Augmentation
+synthetic: False
+flip: True
+mask_ratio: 0.
+mask_T_ratio: 0.
+noise: False
+

@@ -1,0 +1,47 @@
+# General  
+finetune: True
+partial_train: null
+log: run_action
+backbone_ckpt: null
+
+# Traning 
+epochs: 300
+batch_size: 8
+lr_backbone: 0.00008
+lr_head: 0.0008
+weight_decay: 0.01
+lr_decay: 0.99
+ckpt_save_frequency: 5
+quickdebug: False
+
+# Model
+# For following options, they are not used for init MotionBERT,for our model, we load relative parameter from cmd
+###########################################
+dim_feat: 128
+mlp_ratio: 2
+num_heads: 8
+att_fuse: True
+###########################################
+# For following options, they are used for current model structure of last classification head
+# And for backbone about Spatial and Temporal Transformer blocks, all paramters comes from arguments and hyper-config.
+
+# this paramter demonstrate channel dimension number in embedding space
+maxlen: 243
+depth: 6
+dim_rep: 128
+dropout_ratio: 0.5
+hidden_dim: 1024
+model_version: class
+num_joints: 17
+###########################################
+
+# Data
+dataset: ntu120_hrnet
+data_split: xsub
+clip_len: 243
+action_classes: 120
+
+# Augmentation
+random_move: True
+scale_range_train: [ 1, 3 ]
+scale_range_test: [ 2, 2 ]
