@@ -44,9 +44,6 @@ See details in [reference document](doc/mesh.md).
 
 ## Wild Video Inference
 
-| ![pose3d_1](fig/pose3d/basketball.gif) | ![pose3d_2](fig/pose3d/skating.gif) |
-| -------------------------------------- | ----------------------------------- |
-
 See details in [reference document](doc/inference.md).
 
 
@@ -55,10 +52,10 @@ See details in [reference document](doc/inference.md).
 
 ### Simple application: Motion capture for skeletal animation
 
-
-
 | ![mocap_1](fig/mocap/mocap_fig3.gif) | ![mocap_2](fig/mocap/mocap_fig2.gif) | ![mocap_3](fig/mocap/mocap_fig1.gif) |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
+
+See details in [reference document](doc/inference.md).
 
 
 
@@ -67,7 +64,7 @@ See details in [reference document](doc/inference.md).
 | ![mocap_1](fig/drawings/offline_combine_demo_1.gif) | ![mocap_2](fig/drawings/offline_combine_demo_2.gif) | ![mocap_3](fig/drawings/offline_combine_demo_3.gif) |
 | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
 
-Detailed instructions see in [Simplified Animated Drawings]([Brian417-cup/AnimatedDrawings: Code to accompany "A Method for Animating Children's Drawings of the Human Figure"](https://github.com/Brian417-cup/AnimatedDrawings)).
+Detailed instructions see in [Simplified Animated Drawings](https://github.com/Brian417-cup/AnimatedDrawings).
 
 
 
